@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [如何理解分布式系统？](#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F)
+  - [为什么需要分布式协作的计算机？](#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E4%BD%9C%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA)
+  - [分布式系统带来的挑战](#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%8C%91%E6%88%98)
+- [Abstraction and Implemention](#abstraction-and-implemention)
+- [Scalability](#scalability)
+- [Availability](#availability)
+- [Consistency](#consistency)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 如何理解分布式系统？
 
 A distributed system is a collection of computers that work together to form a single computer for end users. All of the distributed machines have one shared state and operate concurrently. With distributed systems, users must be able to communicate with any of the distributed machines without knowing it's only one machine. The distributed system network stores its data on more than just a single node, using multiple physical or virtual machines at the same time.
@@ -35,7 +51,7 @@ A distributed system is a collection of computers that work together to form a s
 
 这是一个很强大的特性。如果你构建了一个系统，并且只要增加计算机的数量，系统就能相应提高性能或者吞吐量，这将会是一个巨大的成果，因为计算机只需要花钱就可以买到。如果不增加计算机，就需要花钱雇程序员来重构这些系统，进而使这些系统有更高的性能，更高的运行效率，或者应用一个更好的算法之类的。花钱请程序员来修补这些代码，使它们运行的更快，通常会是一个昂贵的方法。我们还是希望能够通过从十台计算机提升到一千台计算机，就能扛住一百倍的流量。
 
-# Availabe
+# Availability
 
 大型分布式系统中有一个大问题，那就是一些很罕见的问题会被放大。例如在我们的1000台计算机的集群中，总是有故障，要么是机器故障，要么是运行出错，要么是运行缓慢，要么是执行错误的任务。一个更常见的问题是网络，在一个有1000台计算机的网络中，会有大量的网络电缆和网络交换机，所以总是会有人踩着网线导致网线从接口掉出，或者交换机风扇故障导致交换机过热而不工作。在一个大规模分布式系统中，各个地方总是有一些小问题出现。所以大规模系统会将一些几乎不可能并且你不需要考虑的问题，变成一个持续不断的问题。
 
